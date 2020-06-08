@@ -1,7 +1,7 @@
 {
   "name": "widewebpro/craftcms",
   "description": "Wideweb base project",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "project",
   "require": {
     "craftcms/cms": "^3.4.0",
@@ -21,35 +21,18 @@
   },
   "autoload": {
     "psr-4": {
-      "modules\\sitemodule\\": "modules/sitemodule/src/"
+      "modules\\": "modules/"
     }
   },
   "config": {
-    "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {
       "php": "7.0"
     }
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://repo.repman.io"
-    },
-    {
-      "packagist": false
-    }
-  ],
   "scripts": {
-    "craft-update": [
-      "@php craft migrate/all",
-      "@php craft project-config/sync",
-      "@php craft clear-caches/all"
-    ],
     "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('example.env', '.env');\""
-    ],
-    "post-update-cmd": "@craft-update",
-    "post-install-cmd": "@craft-update"
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
   }
 }

@@ -10,7 +10,7 @@
 - RUN redis server `redis-server --daemonize yes`
 
 ### Docker
-
+`Not available yet`
 ## Installation
 
 - Create project `composer create-project widewebpro/craftcms <directory>`

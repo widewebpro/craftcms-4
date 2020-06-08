@@ -1,6 +1,6 @@
 # Wideweb base project
 
-# Preparing your envieroment 
+## Preparing your envieroment 
 
 ### Valet
 
@@ -9,7 +9,9 @@
 - Install redis `brew install redis`
 - RUN redis server `redis-server --daemonize yes`
 
-### Installation
+### Docker
+
+## Installation
 
 - Create project `composer create-project widewebpro/craftcms <directory>`
 - Create Database in your local server

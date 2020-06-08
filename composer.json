@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "modules\\": "modules/"
+      "modules\\sitemodule\\": "modules/sitemodule/src/"
     }
   },
   "config": {
@@ -31,9 +31,25 @@
       "php": "7.0"
     }
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.repman.io"
+    },
+    {
+      "packagist": false
+    }
+  ],
   "scripts": {
+    "craft-update": [
+      "@php craft migrate/all",
+      "@php craft project-config/sync",
+      "@php craft clear-caches/all"
+    ],
     "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-    ]
+      "@php -r \"file_exists('.env') || copy('example.env', '.env');\""
+    ],
+    "post-update-cmd": "@craft-update",
+    "post-install-cmd": "@craft-update"
   }
 }

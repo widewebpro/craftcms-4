@@ -19,7 +19,28 @@
 
 return [
     'modules' => [
-        'my-module' => \modules\Module::class,
+        'site-module' => [
+            'class' => \modules\sitemodule\SiteModule::class,
+        ],
     ],
-    //'bootstrap' => ['my-module'],
+    'bootstrap' => ['site-module'],
+    'components' => [
+        'deprecator' => [
+            'throwExceptions' => YII_DEBUG,
+        ],
+        'redis' => [
+            'class' => yii\redis\Connection::class,
+            'hostname' => getenv('REDIS_HOSTNAME'),
+            'port' => getenv('REDIS_PORT'),
+            'database' => getenv('REDIS_DEFAULT_DB'),
+        ],
+        'cache' => [
+            'class' => yii\redis\Cache::class,
+            'redis' => [
+                'hostname' => getenv('REDIS_HOSTNAME'),
+                'port' => getenv('REDIS_PORT'),
+                'database' => getenv('REDIS_CRAFT_DB'),
+            ],
+        ],
+    ],
 ];

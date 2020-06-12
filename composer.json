@@ -1,7 +1,7 @@
 {
   "name": "widewebpro/craftcms",
   "description": "Wideweb base project",
-  "version": "1.0.6",
+  "version": "1.1.1",
   "type": "project",
   "require": {
     "craftcms/cms": "^3.4.0",

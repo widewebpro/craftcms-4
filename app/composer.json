@@ -2,13 +2,7 @@
   "require": {
     "craftcms/cms": "3.5.16",
     "craftcms/redactor": "2.8.3",
-    "nystudio107/craft-similar": "1.0.6",
-    "solspace/craft-freeform": "3.9.6",
-    "supercool/buttonbox": "2.0.4",
-    "vaersaagod/matrixmate": "1.2.7",
-    "verbb/super-table": "2.6.4",
     "vlucas/phpdotenv": "^3.4.0",
-    "weareferal/matrix-field-preview": "1.2.1",
     "yiisoft/yii2-redis": "^2.0"
   },
   "require-dev": {

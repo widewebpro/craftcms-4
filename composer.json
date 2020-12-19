@@ -1,14 +1,10 @@
 {
   "name": "widewebpro/craftcms",
-  "description": "Wideweb base project with simple docker setup",
-  "version": "2.0.0",
+  "description": "Wideweb base project with simple docker setup.",
+  "version": "2.0.1",
   "type": "project",
   "require": {
-    "craftcms/cms": "^3.5.15.1",
     "vlucas/phpdotenv": "^3.4.0"
-  },
-  "require-dev": {
-    "yiisoft/yii2-shell": "^2.0.3"
   },
   "config": {
     "optimize-autoloader": true,
@@ -17,12 +13,14 @@
     }
   },
   "scripts": {
-    "post-root-package-install": [
+    "post-create-project-cmd": [
       "@php -r \"file_exists('.env') || copy('./app/.env.example', './app/.env');\"",
       "@php -r \"unlink('composer.json');\"",
       "@php -r \"unlink('composer.lock');\"",
       "@php -r \"unlink('LICENSE.md');\"",
-      "@php -r \"unlink('README.md');\""
+      "@php -r \"unlink('README.md');\"",
+      "@php -r \"composer install -d=./app;\"",
+      "@php -r \"unlink('vendor');\""
     ]
   }
 }

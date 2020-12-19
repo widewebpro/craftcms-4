@@ -1,30 +1,14 @@
 {
   "name": "widewebpro/craftcms",
-  "description": "Wideweb base project",
-  "version": "1.1.2",
+  "description": "Wideweb base project with simple docker setup",
+  "version": "2.0.0",
   "type": "project",
   "require": {
-    "craftcms/cms": "^3.4.0",
-    "yiisoft/yii2-redis": "^2.0.6",
-    "vlucas/phpdotenv": "^3.4.0",
-    "craftcms/redactor": "^2.6.1",
-    "nystudio107/craft-imageoptimize": "^1.3.2",
-    "nystudio107/craft-minify": "^1.2.5",
-    "nystudio107/craft-retour": "^3.0.0",
-    "nystudio107/craft-seomatic": "^3.0.0",
-    "nystudio107/craft-typogrify": "^1.1.1",
-    "nystudio107/craft-twigpack": "^1.0.0",
-    "ostark/craft-async-queue": "^1.3.0",
-    "putyourlightson/craft-blitz-recommendations": "1.0.0-beta.2",
-    "putyourlightson/craft-elements-panel": "^1.0.0"
+    "craftcms/cms": "^3.5.15.1",
+    "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
     "yiisoft/yii2-shell": "^2.0.3"
-  },
-  "autoload": {
-    "psr-4": {
-      "modules\\sitemodule\\": "modules/sitemodule/src/"
-    }
   },
   "config": {
     "optimize-autoloader": true,
@@ -34,7 +18,11 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+      "@php -r \"file_exists('.env') || copy('./app/.env.example', './app/.env');\"",
+      "@php -r \"unlink('composer.json');\"",
+      "@php -r \"unlink('composer.lock');\"",
+      "@php -r \"unlink('LICENSE.md');\"",
+      "@php -r \"unlink('README.md');\""
     ]
   }
 }

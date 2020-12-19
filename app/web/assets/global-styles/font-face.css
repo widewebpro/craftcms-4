@@ -1,0 +1,30 @@
+/* -- Site fonts */
+/* -- Operator Mono normal */
+
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('/assets/fonts/SuisseIntl-Light-WebM.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('/assets/fonts/SuisseIntl-Regular-WebXL.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('/assets/fonts/SuisseIntl-Regular-WebXL.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('/assets/fonts/SuisseIntl-Medium-WebM.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}

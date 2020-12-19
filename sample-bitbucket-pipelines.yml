@@ -1,0 +1,35 @@
+pipelines:
+
+  branches:
+    alpine:
+    - step:
+        name: Deploy to Registry
+        image: digitalocean/doctl
+        script:
+         - export BUILD_ID=$BITBUCKET_COMMIT
+         - export ENV= #env name
+         - export REGISTRY_URL= #registry URL for container
+         - docker login -u $DIGITALOCEAN_ACCESS_TOKEN -p $DIGITALOCEAN_ACCESS_TOKEN registry.digitalocean.com
+         - docker build -f ./Dockerfile -t $REGISTRY_URL/$ENV:$BUILD_ID .
+         - docker push $REGISTRY_URL/$ENV:$BUILD_ID
+         #- docker tag $REGISTRY_URL/$ENV:$BUILD_ID $REGISTRY_URL/$ENV:latest
+         #- docker push $REGISTRY_URL/$ENV:latest
+        services:
+         - docker
+
+    - step:
+        name: Test Deploy to droplet
+        script:
+        - export BUILD_ID=$BITBUCKET_COMMIT
+        - export ENV= #env name
+        - export IMAGE_NAME= #registry_URL/$ENV:$BUILD_ID
+        - pipe: atlassian/ssh-run:0.2.2
+          variables:
+            SSH_USER: $SSH_USER
+            SERVER: $SSH_SERVER
+            COMMAND: >
+              docker login -u $DIGITALOCEAN_ACCESS_TOKEN -p $DIGITALOCEAN_ACCESS_TOKEN registry.digitalocean.com &&
+              docker stop $CONTAINERS_TO_STOP &&
+              docker run -it -p 80:8080 -d $IMAGE_NAME
+        services:
+        - docker

@@ -1,0 +1,40 @@
+:root {
+  /**
+   * Application Theme Colors
+   */
+
+  --colorOpacityGray: #E6F0F0;
+  --colorBlack2: #5F6B68;
+  --colorBlack: #2D343F;
+  --colorBorder: #E1E7EC;
+  --colorLightWhite: #CED1D7;
+  --colorLightGray3: #878FA0;
+  --colorOrange: #F37029;
+  --colorPlay: #C2EAE0;
+  --colorLightGray: #F9FBFD;
+  --colorWhite: #ffffff;
+  --colorActive: #645FAA;
+  --colorLightGray2: #888888;
+  --colorGreen: #00BF61;
+  --colorLightBlue: #00ADFF;
+  --darkGray: #E2E2E2;
+  --colorBg: #2D343F;
+  --activeCheck: #7AC4D3;
+  --colorRed: #EB1D24;
+  --colorBlue: #3255A5;
+  --colorYellow: #F9B62F;
+  --opacityLight: #E8C2AE;
+  --bglayouts: linear-gradient(165.08deg, #7AC4D3 -3.26%, #6C85B9 51.45%, #645FAA 86.68%);
+  --colorDarkGray: rgba(255, 255, 255, 0.75);
+
+
+  /**
+   * Base var colors
+   */
+  --colorBody: var(--colorBlack);
+  --colorBackground: var(--colorBg);
+
+  /**
+   * Gradient
+   */
+}

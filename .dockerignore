@@ -1,0 +1,12 @@
+Dockerfile
+dev.Dockerfile
+Makefile
+README.md
+nginx/
+craftcms/
+bitbucket-pipelines.yml
+default.conf
+nginx.conf
+php.conf
+supervisor.conf
+vhost.conf

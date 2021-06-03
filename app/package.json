@@ -1,5 +1,5 @@
 {
-    "name": "fusion",
+    "name": "wideweb",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
@@ -8,14 +8,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@gitlab.com/Skyrkt/[todo].git"
+        "url": "[todo].git"
     },
     "author": "Marushchak",
     "license": "ISC",
     "bugs": {
-        "url": "https://gitlab.com/Skyrkt/[todo]/issues"
+        "url": "[todo]/issues"
     },
-    "homepage": "https://gitlab.com/Skyrkt/[todo]",
+    "homepage": "[todo]",
     "browserslist": [
         "> 1% in CA",
         "> 1% in US",

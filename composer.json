@@ -4,13 +4,13 @@
   "version": "2.2.3",
   "type": "project",
   "require": {
-    "craftcms/cms": "^3.5.16",
+    "craftcms/cms": "^3.6.11",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "config": {
     "optimize-autoloader": true,
     "platform": {
-      "php": "7.0"
+      "php": "7.4"
     }
   },
   "scripts": {

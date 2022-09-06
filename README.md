@@ -10,7 +10,7 @@
 
 ## Installation
 
-- Create project `composer create-project widewebpro/craftcms <directory> --no-install`
+- Create project `composer create-project widewebpro/craftcms-4 <directory> --no-install`
 - Go to your new project folder `cd <directory>`
 - RUN `docker-compose up`. It's simple docker setup so there is only nginx and mariadb containers will be build and up.
 - Using credentials from `docker-compose.yml` - connect to mariadb container and import DB

@@ -1,0 +1,23 @@
+{#
+    Section: Pages
+    Section Type: Structure
+    URI Format: {entry.last().uri}/{parent.uri}/{slug}
+    Template: entries/pages/index
+#}
+
+{% extends "_layouts/main" %}
+{% set type = entry.type.handle %}
+{% set pageTemplate = type|replace('_', '/') %}
+
+{% block content %}
+    {% include ["_pages/entries/pages/types/" ~ pageTemplate, "entries/fallback"] with {
+        pageTemplate: pageTemplate
+    } %}
+
+    {% set isAdmin = currentUser ? currentUser.admin : false %}
+    {% if devMode and isAdmin %}
+        <div class="fixed z-10 bottom-0 left-0 p-5 px-10 bg-gray-5 text-white m-10 mb-65 rounded text-style-11 cursor-default opacity-25 hover:opacity-100">
+            entries/pages/types/{{pageTemplate}}
+        </div>
+    {% endif %}
+{% endblock %}

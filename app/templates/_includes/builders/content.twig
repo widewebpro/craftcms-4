@@ -1,0 +1,13 @@
+{%- for block in content.contentBuilder.level(1).all() -%}
+
+    {%- switch block.type -%}
+
+        {%- case 'articles' -%}
+
+            {%- include '_includes/components/sections/grids/grid--article' ignore missing with {
+                cards: block.articles.all(),
+            } -%}
+
+    {%- endswitch -%}
+
+{%- endfor -%}

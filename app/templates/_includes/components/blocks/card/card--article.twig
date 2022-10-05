@@ -1,0 +1,25 @@
+{%- extends '_includes/components/blocks/card/_card--props' -%}
+
+{#
+    Cards Article
+
+    ### PROPERTIES ###
+    title  (string)
+    text   (string)
+    date   (object)
+    link   (string)
+#}
+
+{%- set props = props|merge({
+    date: date ?? null
+}) -%}
+
+{#{%- set difference = date(start).diff(date(date)) -%}#}
+{#{%- set leftDays = difference.days -%}#}
+
+{%- block card -%}
+    <article>
+        <h3>{{ props.title }}</h3>
+        <div>{{ 0 }} days ago</div>
+    </article>
+{%- endblock -%}

@@ -1,0 +1,24 @@
+{%- extends '_includes/components/sections/grids/_grid--props.twig' -%}
+
+{#
+    ### PROPERTIES ###
+    ------------------
+    INHERITED FROM: _organisms/grids/grid--props
+
+    ## BITS
+
+    ## BLOCKS
+    card/card--article
+#}
+
+{%- block grid -%}
+    <section>
+        {% for card in cards %}
+            {% include '_includes/components/blocks/card/card--article' with {
+                title: entry.title,
+                link:  entry.url,
+                date:  entry.postDate
+            } %}
+        {% endfor %}
+    </section>
+{%- endblock -%}
